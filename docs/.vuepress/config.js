@@ -1,7 +1,7 @@
 const moment = require ('moment');
 
 module.exports = {
-  base:'/vue-press/',
+  base: '/vue-press/',
   title: 'Hello VuePress',
   description: 'Just playing around',
   head: [
@@ -74,6 +74,16 @@ module.exports = {
           const moment = require ('moment');
           moment.locale ('zh-cn');
           return moment (timestamp).format ('LLLL');
+        },
+      },
+    ],
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: {
+          message: '发现新内容可用',
+          buttonText: '刷新',
         },
       },
     ],
